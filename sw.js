@@ -1,6 +1,6 @@
 // Service worker for offline support
 // Bump CACHE_VERSION to force a refresh when you update the app
-const CACHE_VERSION = 'felices-2026-v1';
+const CACHE_VERSION = 'felices-2026-v2';
 const ASSETS = [
   './',
   './index.html',
