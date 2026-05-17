@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Convention 2026">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0f0e0a">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="apple-touch-icon" href="icon-180.png">
+<title>Eternal Happiness / Felices para siempre 2026</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; }
+body.dark { background: #0f0e0a; color: #f0ead6; }
+body.light { background: #f5f0e8; color: #1a1a14; }
+header { padding: 14px 14px 0; position: sticky; top: 0; z-index: 10; }
+body.dark header { background: #0f0e0a; border-bottom: 1px solid #2a2a22; }
+body.light header { background: #f5f0e8; border-bottom: 1px solid #d8d0c0; }
+.hrow { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 8px; }
+.htitle { flex: 1; min-width: 0; }
+.ey { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #b8860b; margin-bottom: 3px; }
+h1 { font-size: clamp(17px,4.5vw,24px); font-weight: normal; line-height: 1.2; }
+.su { font-size: 11px; font-style: italic; margin-top: 3px; }
+body.dark .su { color: #777; }
+body.light .su { color: #999; }
+.btns { display: flex; flex-direction: column; gap: 5px; flex-shrink: 0; }
+.btn { border-radius: 5px; font-family: Georgia, serif; cursor: pointer; padding: 7px 11px; font-size: 12px; white-space: nowrap; }
+.btn-bm { border: 1px solid #b8860b; color: #b8860b; background: transparent; }
+.btn-lang { border: 1px solid #888; color: #888; background: transparent; font-size: 13px; font-weight: bold; }
+.btn-theme { border: 1px solid #888; background: transparent; font-size: 16px; padding: 5px 10px; }
+.tabs { display: flex; gap: 2px; }
+.tab { flex: 1; padding: 9px 4px; background: transparent; border-bottom: none; border-radius: 4px 4px 0 0; font-size: 12px; text-align: center; font-family: Georgia, serif; cursor: pointer; }
+body.dark .tab { border: 1px solid #2a2a22; color: #777; }
+body.light .tab { border: 1px solid #d0c8b8; color: #999; }
+main { max-width: 700px; margin: 0 auto; padding: 16px 14px 70px; }
+.tbox { border-radius: 8px; padding: 13px 15px; margin-bottom: 18px; }
+.tlb { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px; }
+.ttx { font-size: 14px; font-style: italic; line-height: 1.5; }
+.tvs { font-size: 11px; margin-top: 4px; }
+body.dark .tvs { color: #777; }
+body.light .tvs { color: #999; }
+.sb { margin-bottom: 22px; }
+.sh { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.sl { height: 1px; flex: 1; }
+.sn { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; white-space: nowrap; }
+.item { border-radius: 6px; margin-bottom: 3px; overflow: hidden; }
+body.dark .item { border: 1px solid #222; background: #141410; }
+body.light .item { border: 1px solid #ddd; background: #fff; }
+.irow { display: flex; align-items: flex-start; padding: 12px 13px; gap: 10px; cursor: pointer; -webkit-user-select: none; user-select: none; }
+.itm { font-size: 11px; min-width: 36px; padding-top: 2px; flex-shrink: 0; }
+.ibd { flex: 1; min-width: 0; }
+.iti { font-size: 13px; line-height: 1.4; }
+body.dark .iti { color: #f0ead6; }
+body.light .iti { color: #1a1a14; }
+.bold { font-weight: bold; }
+.ide { font-size: 11px; font-style: italic; margin-top: 3px; }
+body.dark .ide { color: #777; }
+body.light .ide { color: #999; }
+.hn { font-size: 10px; margin-top: 3px; font-style: italic; }
+.bb { background: none; border: none; padding: 3px; flex-shrink: 0; line-height: 0; cursor: pointer; }
+.na { padding: 11px 13px 13px; }
+body.dark .na { border-top: 1px solid #222; }
+body.light .na { border-top: 1px solid #eee; }
+.nl { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 7px; }
+body.dark .nl { color: #555; }
+body.light .nl { color: #aaa; }
+textarea { width: 100%; border-radius: 4px; font-family: Georgia, serif; font-size: 14px; padding: 10px 12px; resize: vertical; line-height: 1.6; outline: none; min-height: 80px; -webkit-appearance: none; }
+body.dark textarea { background: #0a0a08; border: 1px solid #333; color: #f0ead6; }
+body.light textarea { background: #fafaf7; border: 1px solid #ddd; color: #1a1a14; }
+body.dark textarea::placeholder { color: #444; font-style: italic; }
+body.light textarea::placeholder { color: #bbb; font-style: italic; }
+.rfx { margin-top: 18px; border-radius: 8px; padding: 15px; }
+body.dark .rfx { background: #111; border: 1px solid #222; }
+body.light .rfx { background: #ede8dc; border: 1px solid #d8d0c0; }
+.rt { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 13px; }
+body.dark .rt { color: #555; }
+body.light .rt { color: #aaa; }
+.rq { font-size: 12px; font-style: italic; margin-bottom: 5px; }
+body.dark .rq { color: #777; }
+body.light .rq { color: #999; }
+.ri { margin-bottom: 13px; }
+.bttl { font-size: 18px; font-weight: normal; color: #b8860b; margin-bottom: 15px; }
+.em { border: 1px dashed; border-radius: 8px; padding: 38px 20px; text-align: center; font-style: italic; font-size: 13px; line-height: 1.6; }
+body.dark .em { border-color: #333; color: #555; }
+body.light .em { border-color: #ccc; color: #bbb; }
+.bc { border-radius: 8px; padding: 13px; margin-bottom: 10px; }
+body.dark .bc { background: #111; border: 1px solid #222; }
+body.light .bc { background: #fff; border: 1px solid #ddd; }
+.bcr { display: flex; justify-content: space-between; align-items: flex-start; }
+.bm { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+body.dark .bm { color: #555; }
+body.light .bm { color: #aaa; }
+.bti { font-size: 14px; font-weight: bold; }
+body.dark .bti { color: #f0ead6; }
+body.light .bti { color: #1a1a14; }
+.bde { font-size: 11px; font-style: italic; margin-top: 2px; }
+body.dark .bde { color: #777; }
+body.light .bde { color: #999; }
+.bno { font-size: 12px; font-style: italic; line-height: 1.5; margin-top: 10px; padding: 8px 12px; border-left: 2px solid #b8860b; border-radius: 0 4px 4px 0; }
+body.dark .bno { color: #aaa; background: #1a1508; }
+body.light .bno { color: #666; background: #fdf6e3; }
+.gt { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; margin: 22px 0 8px; }
+body.dark .gt { color: #555; }
+body.light .gt { color: #aaa; }
+#toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #2e7d62; color: #fff; padding: 8px 18px; border-radius: 20px; font-size: 12px; opacity: 0; transition: opacity 0.3s; pointer-events: none; z-index: 100; }
+@media(min-width:600px){ header{padding:18px 22px 0;} main{padding:20px 22px 70px;} h1{font-size:26px;} .tab{font-size:13px;} }
+</style>
+</head>
+<body class="dark">
+<div id="toast">Guardado</div>
+<header>
+<div class="hrow">
+<div class="htitle">
+<p class="ey" id="ey"></p>
+<h1 id="h1"></h1>
+<p class="su" id="su"></p>
+</div>
+<div class="btns">
+<button class="btn btn-bm" id="bmBtn" onclick="toggleMode()"></button>
+<button class="btn btn-lang" id="langBtn" onclick="toggleLang()"></button>
+<button class="btn btn-theme" id="themeBtn" onclick="toggleTheme()"></button>
+</div>
+</div>
+<div class="tabs">
+<button class="tab" id="t0" onclick="setDay(0)"></button>
+<button class="tab" id="t1" onclick="setDay(1)"></button>
+<button class="tab" id="t2" onclick="setDay(2)"></button>
+</div>
+</header>
+<main id="main"></main>
+<script>
+var DATA = {
+es: {
+eyebrow:"Asamblea Regional 2026", title:"Felices para siempre", subtitle:"Diario de la asamblea",
+bm:"Marcadores", prog:"Programa", langLbl:"EN", morning:"Mañana", afternoon:"Tarde",
+baseText:"Texto base del día", myNotes:"Mis notas", noteSaved:"Nota guardada",
+notePH:"¿Qué aprendiste? ¿Qué texto te llamó la atención? ¿Cómo puedes aplicar esto?",
+refl:"Reflexión", writePH:"Escribe aquí...", bmTitle:"Temas marcados",
+bmEmpty:"Marca temas del programa con la estrella para guardarlos aquí",
+genTitle:"Notas generales de la asamblea", genPH:"Reflexiones, pensamientos y aprendizajes...",
+days:["Viernes","Sábado","Domingo"],
+prompts:["¿Cuál discurso te impactó más hoy y por qué?","¿Qué texto bíblico quieres estudiar más?","¿Cómo puedes aplicar lo aprendido en tu vida?"],
+program:[
+{ theme:"Felices los que reconocen sus necesidades espirituales", verse:"Mateo 5:3",
+morning:[
+{t:"9:40",ti:"DISCURSO DEL PRESIDENTE",de:"Felicidad para siempre en abundancia: ¿es realista? (Salmo 16:11; 100:2)",b:true},
+{t:"10:10",ti:"PRODUCCIÓN AUDIOVISUAL: Las buenas noticias según Jesús: Episodio 4",de:"Para eso he venido (Mateo 4:23-25; 8:1-4,14-17; 9:1-17; 12:1-21; Marcos 1:21–3:19; Lucas 4:31-44; 5:12–6:16; Juan 5:1-47)",b:true},
+{t:"11:05",ti:"Canción 17 y anuncios",de:"",b:false,s:true},
+{t:"11:15",ti:"SERIE DE DISCURSOS: Las profecías sobre el Mesías se cumplieron",de:"",b:true,s:true},
+{t:"",ti:"Él mismo tomó nuestras enfermedades",de:"Mateo 8:16,17; Salmo 32:1,2; Isaías 53:4,5",b:false},
+{t:"",ti:"No discutirá",de:"Mateo 12:15-21; Isaías 42:1-4",b:false},
+{t:"",ti:"Nunca les hablaba sin utilizar alguna comparación",de:"Mateo 13:34,35; Salmo 78:2",b:false}
+],
+afternoon:[
+{t:"1:50",ti:"¿Qué enseñó Jesús sobre el sábado?",de:"Mateo 12:1-14; Juan 5:1-17",b:true},
+{t:"2:10",ti:"SERIE DE DISCURSOS: Imitemos a los que sirvieron a Jesús",de:"",b:true,s:true},
+{t:"",ti:"Los apóstoles",de:"Lucas 6:13,15,16",b:false},
+{t:"",ti:"Muchas mujeres",de:"Mateo 27:55; Marcos 15:40; Lucas 8:1-3",b:false},
+{t:"2:50",ti:"Canción 76 y anuncios",de:"",b:false,s:true},
+{t:"3:00",ti:"Felices los que lavan sus túnicas largas",de:"Apocalipsis 7:9,10,13-15; 22:14; Juan 5:24-29",b:true},
+{t:"3:30",ti:"Canción 155 y oración de conclusión",de:"",b:false,s:true}
+]
+},
+{ theme:"Hay más felicidad en dar que en recibir", verse:"Hechos 20:35",
+morning:[
+{t:"9:30",ti:"Canción 111 y oración",de:"",b:false,s:true},
+{t:"9:40",ti:"Él comenzó a hablarles y a enseñarles",de:"Mateo 5:1,2",b:true},
+{t:"9:50",ti:"PRODUCCIÓN AUDIOVISUAL: Las buenas noticias según Jesús: Episodio 5",de:"Quedaron asombrados de su manera de enseñar (Mateo 5:3–7:29; Lucas 6:17-49)",b:true},
+{t:"10:25",ti:"Canción 89 y anuncios",de:"",b:false,s:true},
+{t:"10:35",ti:"¿Qué nos puede impedir ser felices?",de:"Lucas 6:24-26",b:true},
+{t:"10:50",ti:"¿Puede discernir el principio que hay detrás de la ley?",de:"Mateo 5:17-48",b:true},
+{t:"11:15",ti:"SERIE DE DISCURSOS: Lecciones de la tierra de Jesús",de:"",b:true,s:true},
+{t:"",ti:"La sal y la luz",de:"Mateo 5:13-16",b:false},
+{t:"",ti:"Las plantas y los animales",de:"Génesis 1:28,29; Mateo 6:19,26,28; 7:6,10,15,16",b:false},
+{t:"11:40",ti:"BAUTISMO: Tu Padre, que ve en secreto, te recompensará",de:"Mateo 6:6",b:true}
+],
+afternoon:[
+{t:"1:50",ti:"SERIE DE DISCURSOS: Felices los...",de:"",b:true,s:true},
+{t:"",ti:"Los que reconocen sus necesidades espirituales (Mateo 5:3)",de:"",b:false},
+{t:"",ti:"Los que lloran (Mateo 5:4)",de:"",b:false},
+{t:"",ti:"Los de temperamento apacible (Mateo 5:5)",de:"",b:false},
+{t:"",ti:"Los que tienen hambre y sed de justicia (Mateo 5:6)",de:"",b:false},
+{t:"",ti:"Los misericordiosos (Mateo 5:7)",de:"",b:false},
+{t:"",ti:"Los de corazón puro (Mateo 5:8)",de:"",b:false},
+{t:"",ti:"Los que trabajan por la paz (Mateo 5:9)",de:"",b:false},
+{t:"",ti:"Los que han sido perseguidos por causa de la justicia (Mateo 5:10)",de:"",b:false},
+{t:"",ti:"Ustedes cuando la gente los insulta (Mateo 5:11,12)",de:"",b:false},
+{t:"3:20",ti:"Canción 81 y anuncios",de:"",b:false,s:true},
+{t:"3:30",ti:"¿Por qué están ustedes preocupados?",de:"Mateo 6:19-33",b:true},
+{t:"3:55",ti:"Entren por la puerta estrecha",de:"Mateo 7:1-5,12-14,16-18,24-27",b:true},
+{t:"4:30",ti:"Canción 21 y oración de conclusión",de:"",b:false,s:true}
+]
+},
+{ theme:"Felices los ojos de ustedes, que ven, y sus oídos, que oyen", verse:"Mateo 13:16",
+morning:[
+{t:"9:30",ti:"Canción 68 y oración",de:"",b:false,s:true},
+{t:"9:40",ti:"SERIE DE DISCURSOS: Lecciones de las comparaciones de Jesús",de:"",b:true,s:true},
+{t:"",ti:"Los cuatro tipos de terreno",de:"Mateo 13:18-23",b:false},
+{t:"",ti:"El trigo y la mala hierba",de:"Mateo 13:24-30",b:false},
+{t:"",ti:"El grano de mostaza",de:"Mateo 13:31,32",b:false},
+{t:"",ti:"La levadura",de:"Mateo 13:33",b:false},
+{t:"",ti:"La red de pesca",de:"Mateo 13:47-50",b:false},
+{t:"11:00",ti:"Canción 64 y anuncios",de:"",b:false,s:true},
+{t:"11:10",ti:"DISCURSO PÚBLICO: ¿Ha encontrado el tesoro?",de:"Mateo 13:44-46",b:true},
+{t:"11:40",ti:"Resumen de La Atalaya",de:"",b:true}
+],
+afternoon:[
+{t:"1:50",ti:"PRODUCCIÓN AUDIOVISUAL: Las buenas noticias según Jesús: Episodio 6",de:"¿Eres tú el que tiene que venir? (Mateo 8:5-13; 11:2–13:53; Marcos 3:19–4:34; Lucas 7:1–8:21)",b:true},
+{t:"2:35",ti:"Canción 120 y anuncios",de:"",b:false,s:true},
+{t:"2:45",ti:"¿Qué hemos aprendido?",de:"",b:true},
+{t:"2:55",ti:"Felices los ojos de ustedes, que ven",de:"Mateo 7:1-5; 13:16,17; Lucas 6:46-49; 10:21; Juan 17:6; Santiago 1:22-25",b:true},
+{t:"3:45",ti:"Canción 163 y oración de conclusión",de:"",b:false,s:true}
+]
+}
+]
+},
+en: {
+eyebrow:"Regional Convention 2026", title:"Eternal Happiness", subtitle:"Convention Journal",
+bm:"Bookmarks", prog:"Program", langLbl:"ES", morning:"Morning", afternoon:"Afternoon",
+baseText:"Day theme", myNotes:"My notes", noteSaved:"Note saved",
+notePH:"What did you learn? What scripture stood out? How can you apply this?",
+refl:"Reflection", writePH:"Write here...", bmTitle:"Bookmarked talks",
+bmEmpty:"Bookmark talks with the star icon to save them here",
+genTitle:"General convention notes", genPH:"Reflections, thoughts, and lessons...",
+days:["Friday","Saturday","Sunday"],
+prompts:["Which talk impacted you most today and why?","Which scripture do you want to study more?","How can you apply what you learned in your life?"],
+program:[
+{ theme:"Happy are those conscious of their spiritual need", verse:"Matthew 5:3",
+morning:[
+{t:"9:40",ti:"CHAIRMAN'S ADDRESS",de:"Abundant Happiness Forever—Is It Realistic? (Psalm 16:11; 100:2)",b:true},
+{t:"10:10",ti:"FEATURE BIBLE DRAMA: The Good News According to Jesus: Episode 4",de:"This Is Why I Have Come (Matthew 4:23-25; 8:1-4,14-17; 9:1-17; 12:1-21; Mark 1:21-3:19; Luke 4:31-44; 5:12-6:16; John 5:1-47)",b:true},
+{t:"11:05",ti:"Song No. 17 and Announcements",de:"",b:false,s:true},
+{t:"11:15",ti:"SYMPOSIUM: Messianic Prophecy Fulfilled",de:"",b:true,s:true},
+{t:"",ti:"He Himself Took Our Sicknesses",de:"Matthew 8:16,17; Psalm 32:1,2; Isaiah 53:4,5",b:false},
+{t:"",ti:"He Will Not Quarrel",de:"Matthew 12:15-21; Isaiah 42:1-4",b:false},
+{t:"",ti:"Without an Illustration He Would Not Speak",de:"Matthew 13:34,35; Psalm 78:2",b:false}
+],
+afternoon:[
+{t:"1:50",ti:"What Did Jesus Teach Regarding the Sabbath?",de:"Matthew 12:1-14; John 5:1-17",b:true},
+{t:"2:10",ti:"SYMPOSIUM: Imitate Those Who Ministered to Jesus",de:"",b:true,s:true},
+{t:"",ti:"The Apostles",de:"Luke 6:13,15,16",b:false},
+{t:"",ti:"Many Women",de:"Matthew 27:55; Mark 15:40; Luke 8:1-3",b:false},
+{t:"2:50",ti:"Song No. 76 and Announcements",de:"",b:false,s:true},
+{t:"3:00",ti:"Happy Are Those Who Wash Their Robes",de:"Revelation 7:9,10,13-15; 22:14; John 5:24-29",b:true},
+{t:"3:30",ti:"Song No. 155 and Closing Prayer",de:"",b:false,s:true}
+]
+},
+{ theme:"There is more happiness in giving than there is in receiving", verse:"Acts 20:35",
+morning:[
+{t:"9:30",ti:"Song No. 111 and Prayer",de:"",b:false,s:true},
+{t:"9:40",ti:"He Opened His Mouth and Began Teaching Them",de:"Matthew 5:1,2",b:true},
+{t:"9:50",ti:"FEATURE BIBLE DRAMA: The Good News According to Jesus: Episode 5",de:"Astounded at His Way of Teaching (Matthew 5:3-7:29; Luke 6:17-49)",b:true},
+{t:"10:25",ti:"Song No. 89 and Announcements",de:"",b:false,s:true},
+{t:"10:35",ti:"What Can Prevent Us From Being Happy?",de:"Luke 6:24-26",b:true},
+{t:"10:50",ti:"Can You Discern the Principle Behind the Law?",de:"Matthew 5:17-48",b:true},
+{t:"11:15",ti:"SYMPOSIUM: Lessons From the Land of Jesus",de:"",b:true,s:true},
+{t:"",ti:"Salt and Light",de:"Matthew 5:13-16",b:false},
+{t:"",ti:"Plants and Animals",de:"Genesis 1:28,29; Matthew 6:19,26,28; 7:6,10,15,16",b:false},
+{t:"11:40",ti:"BAPTISM: Your Father Who Looks On in Secret Will Repay You",de:"Matthew 6:6",b:true}
+],
+afternoon:[
+{t:"1:50",ti:"SYMPOSIUM: Happy Are...",de:"",b:true,s:true},
+{t:"",ti:"Those Conscious of Their Spiritual Need (Matthew 5:3)",de:"",b:false},
+{t:"",ti:"Those Who Mourn (Matthew 5:4)",de:"",b:false},
+{t:"",ti:"The Mild-Tempered (Matthew 5:5)",de:"",b:false},
+{t:"",ti:"Those Hungering and Thirsting for Righteousness (Matthew 5:6)",de:"",b:false},
+{t:"",ti:"The Merciful (Matthew 5:7)",de:"",b:false},
+{t:"",ti:"The Pure in Heart (Matthew 5:8)",de:"",b:false},
+{t:"",ti:"The Peacemakers (Matthew 5:9)",de:"",b:false},
+{t:"",ti:"Those Persecuted for Righteousness Sake (Matthew 5:10)",de:"",b:false},
+{t:"",ti:"You When People Reproach You (Matthew 5:11,12)",de:"",b:false},
+{t:"3:20",ti:"Song No. 81 and Announcements",de:"",b:false,s:true},
+{t:"3:30",ti:"Why Are You Anxious?",de:"Matthew 6:19-33",b:true},
+{t:"3:55",ti:"Go In Through the Narrow Gate",de:"Matthew 7:1-5,12-14,16-18,24-27",b:true},
+{t:"4:30",ti:"Song No. 21 and Closing Prayer",de:"",b:false,s:true}
+]
+},
+{ theme:"Happy are your eyes because they see and your ears because they hear", verse:"Matthew 13:16",
+morning:[
+{t:"9:30",ti:"Song No. 68 and Prayer",de:"",b:false,s:true},
+{t:"9:40",ti:"SYMPOSIUM: Applying Lessons From Jesus Illustrations",de:"",b:true,s:true},
+{t:"",ti:"Four Types of Soil",de:"Matthew 13:18-23",b:false},
+{t:"",ti:"Wheat and Weeds",de:"Matthew 13:24-30",b:false},
+{t:"",ti:"Mustard Grain",de:"Matthew 13:31,32",b:false},
+{t:"",ti:"Leaven",de:"Matthew 13:33",b:false},
+{t:"",ti:"Dragnet",de:"Matthew 13:47-50",b:false},
+{t:"11:00",ti:"Song No. 64 and Announcements",de:"",b:false,s:true},
+{t:"11:10",ti:"PUBLIC BIBLE DISCOURSE: Have You Discovered the Treasure?",de:"Matthew 13:44-46",b:true},
+{t:"11:40",ti:"Summary of The Watchtower",de:"",b:true}
+],
+afternoon:[
+{t:"1:50",ti:"FEATURE BIBLE DRAMA: The Good News According to Jesus: Episode 6",de:"Are You the Coming One? (Matthew 8:5-13; 11:2-13:53; Mark 3:19-4:34; Luke 7:1-8:21)",b:true},
+{t:"2:35",ti:"Song No. 120 and Announcements",de:"",b:false,s:true},
+{t:"2:45",ti:"What Did You Learn?",de:"",b:true},
+{t:"2:55",ti:"Happy Are Your Eyes Because They See",de:"Matthew 7:1-5; 13:16,17; Luke 6:46-49; 10:21; John 17:6; James 1:22-25",b:true},
+{t:"3:45",ti:"Song No. 163 and Closing Prayer",de:"",b:false,s:true}
+]
+}
+]
+}
+};
+
+var COLORS = ["#b8860b","#2e7d62","#4a3e8c"];
+var curDay = 0, showBM = false, openKey = null;
+var notes = {}, bmarks = {}, lang = "es", dark = true;
+
+function saveLS() {
+  try {
+    localStorage.setItem("jw26n", JSON.stringify(notes));
+    localStorage.setItem("jw26b", JSON.stringify(bmarks));
+    localStorage.setItem("jw26l", lang);
+    localStorage.setItem("jw26d", dark ? "1" : "0");
+  } catch(e) {}
+}
+function loadLS() {
+  try {
+    var n = localStorage.getItem("jw26n");
+    var b = localStorage.getItem("jw26b");
+    var l = localStorage.getItem("jw26l");
+    var d = localStorage.getItem("jw26d");
+    if (n) notes = JSON.parse(n);
+    if (b) bmarks = JSON.parse(b);
+    if (l) lang = l;
+    if (d !== null) dark = (d === "1");
+  } catch(e) {}
+}
+function showToast() {
+  var t = document.getElementById("toast");
+  t.style.opacity = "1";
+  clearTimeout(t._x);
+  t._x = setTimeout(function() { t.style.opacity = "0"; }, 1400);
+}
+function esc(s) {
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+}
+function svgOn(c) {
+  var el = document.createElementNS("http://www.w3.org/2000/svg","svg");
+  el.setAttribute("width","18"); el.setAttribute("height","18");
+  el.setAttribute("viewBox","0 0 24 24");
+  el.setAttribute("fill",c); el.setAttribute("stroke",c);
+  el.setAttribute("stroke-width","2");
+  var path = document.createElementNS("http://www.w3.org/2000/svg","path");
+  path.setAttribute("d","M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z");
+  el.appendChild(path);
+  return el.outerHTML;
+}
+function svgOff() {
+  var s = dark ? "#444" : "#ccc";
+  var el = document.createElementNS("http://www.w3.org/2000/svg","svg");
+  el.setAttribute("width","18"); el.setAttribute("height","18");
+  el.setAttribute("viewBox","0 0 24 24");
+  el.setAttribute("fill","none"); el.setAttribute("stroke",s);
+  el.setAttribute("stroke-width","2");
+  var path = document.createElementNS("http://www.w3.org/2000/svg","path");
+  path.setAttribute("d","M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z");
+  el.appendChild(path);
+  return el.outerHTML;
+}
+function setDay(i) { curDay = i; openKey = null; draw(); }
+function toggleMode() { showBM = !showBM; openKey = null; draw(); }
+function toggleLang() { lang = (lang === "es") ? "en" : "es"; saveLS(); draw(); }
+function toggleTheme() { dark = !dark; saveLS(); draw(); }
+function toggleItem(k) { openKey = (openKey === k) ? null : k; draw(); }
+function toggleBmark(k) { bmarks[k] = !bmarks[k]; saveLS(); showToast(); draw(); }
+function saveNote(k) {
+  var el = document.getElementById("note_" + k);
+  if (el) { notes[k] = el.value; saveLS(); showToast(); }
+}
+
+function makeItem(item, k, c, L) {
+  if (item.s) {
+    var sdiv = document.createElement("div");
+    sdiv.className = "item";
+    sdiv.style.opacity = "0.6";
+    var srow = document.createElement("div");
+    srow.className = "irow";
+    srow.style.cursor = "default";
+    var stm = document.createElement("span");
+    stm.className = "itm";
+    stm.style.color = c;
+    stm.textContent = item.t;
+    var sbd = document.createElement("div");
+    sbd.className = "ibd";
+    var sti = document.createElement("p");
+    sti.className = "iti";
+    sti.style.fontStyle = "italic";
+    sti.textContent = item.ti;
+    sbd.appendChild(sti);
+    srow.appendChild(stm);
+    srow.appendChild(sbd);
+    sdiv.appendChild(srow);
+    return sdiv;
+  }
+  var io = (openKey === k);
+  var hb = !!bmarks[k];
+  var hn = !!(notes[k] && notes[k].trim());
+  var div = document.createElement("div");
+  div.className = "item";
+  if (io) { div.style.borderColor = c + "44"; div.style.background = dark ? "#1a1a14" : "#fffdf5"; }
+
+  var row = document.createElement("div");
+  row.className = "irow";
+  row.setAttribute("data-k", k);
+  row.onclick = function() { toggleItem(this.getAttribute("data-k")); };
+
+  var tm = document.createElement("span");
+  tm.className = "itm";
+  tm.style.color = c;
+  tm.textContent = item.t;
+
+  var bd = document.createElement("div");
+  bd.className = "ibd";
+
+  var ti = document.createElement("p");
+  ti.className = "iti" + (item.b ? " bold" : "");
+  ti.textContent = item.ti;
+  bd.appendChild(ti);
+
+  if (item.de) {
+    var de = document.createElement("p");
+    de.className = "ide";
+    de.textContent = item.de;
+    bd.appendChild(de);
+  }
+  if (hn && !io) {
+    var hnp = document.createElement("p");
+    hnp.className = "hn";
+    hnp.style.color = c;
+    hnp.textContent = L.noteSaved;
+    bd.appendChild(hnp);
+  }
+
+  var bb = document.createElement("button");
+  bb.className = "bb";
+  bb.setAttribute("data-k", k);
+  bb.onclick = function(e) { e.stopPropagation(); toggleBmark(this.getAttribute("data-k")); };
+  bb.innerHTML = hb ? svgOn(c) : svgOff();
+
+  row.appendChild(tm);
+  row.appendChild(bd);
+  row.appendChild(bb);
+  div.appendChild(row);
+
+  if (io) {
+    var na = document.createElement("div");
+    na.className = "na";
+    var nl = document.createElement("p");
+    nl.className = "nl";
+    nl.textContent = L.myNotes;
+    var ta = document.createElement("textarea");
+    ta.id = "note_" + k;
+    ta.placeholder = L.notePH;
+    ta.value = notes[k] || "";
+    ta.setAttribute("data-k", k);
+    ta.oninput = function() { saveNote(this.getAttribute("data-k")); };
+    ta.onclick = function(e) { e.stopPropagation(); };
+    na.appendChild(nl);
+    na.appendChild(ta);
+    div.appendChild(na);
+  }
+  return div;
+}
+
+function draw() {
+  var L = DATA[lang];
+  var c = COLORS[curDay];
+  document.body.className = dark ? "dark" : "light";
+  document.getElementById("ey").textContent = L.eyebrow;
+  document.getElementById("h1").textContent = L.title;
+  document.getElementById("su").textContent = L.subtitle;
+  document.getElementById("bmBtn").textContent = showBM ? L.prog : L.bm;
+  document.getElementById("langBtn").textContent = L.langLbl;
+  document.getElementById("themeBtn").textContent = dark ? "\u2600\uFE0F" : "\uD83C\uDF19";
+  document.getElementById("toast").textContent = lang === "es" ? "Guardado" : "Saved";
+
+  for (var i = 0; i < 3; i++) {
+    var tab = document.getElementById("t" + i);
+    tab.textContent = L.days[i];
+    tab.style.display = showBM ? "none" : "";
+    if (!showBM && i === curDay) {
+      tab.style.background = COLORS[i]; tab.style.borderColor = COLORS[i];
+      tab.style.color = "#0f0e0a"; tab.style.fontWeight = "bold";
+    } else {
+      tab.style.background = "transparent";
+      tab.style.borderColor = dark ? "#2a2a22" : "#d0c8b8";
+      tab.style.color = dark ? "#777" : "#999";
+      tab.style.fontWeight = "normal";
+    }
+  }
+
+  var main = document.getElementById("main");
+  main.innerHTML = "";
+
+  if (showBM) { drawBM(L, main); return; }
+
+  var p = L.program[curDay];
+
+  var tbox = document.createElement("div");
+  tbox.className = "tbox";
+  tbox.style.background = dark ? (c + "18") : "#eeebe3";
+  tbox.style.border = dark ? ("1px solid " + c + "33") : "1px solid #d0c8b8";
+  if (!dark) { tbox.style.color = "#1a1a14"; }
+  tbox.innerHTML = "<p class='tlb' style='color:" + c + "'>" + esc(L.baseText) + "</p><p class='ttx'>" + esc(p.theme) + "</p><p class='tvs'>- " + esc(p.verse) + "</p>";
+  main.appendChild(tbox);
+
+  [[L.morning, p.morning, 0], [L.afternoon, p.afternoon, 1]].forEach(function(row) {
+    var sname = row[0], items = row[1], si = row[2];
+    var sb = document.createElement("div");
+    sb.className = "sb";
+
+    var sh = document.createElement("div");
+    sh.className = "sh";
+    sh.innerHTML = "<div class='sl' style='background:linear-gradient(to right," + c + "44,transparent)'></div><span class='sn' style='color:" + c + "'>" + esc(sname) + "</span><div class='sl' style='background:linear-gradient(to left," + c + "44,transparent)'></div>";
+    sb.appendChild(sh);
+
+    items.forEach(function(item, ii) {
+      var k = lang + "_" + curDay + "_" + si + "_" + ii;
+      sb.appendChild(makeItem(item, k, c, L));
+    });
+    main.appendChild(sb);
+  });
+
+  var rfx = document.createElement("div");
+  rfx.className = "rfx";
+  var rt = document.createElement("p");
+  rt.className = "rt";
+  rt.textContent = L.refl + " " + L.days[curDay];
+  rfx.appendChild(rt);
+
+  L.prompts.forEach(function(pr, pi) {
+    var rk = lang + "_r" + curDay + "_" + pi;
+    var ri = document.createElement("div");
+    ri.className = "ri";
+    var rq = document.createElement("p");
+    rq.className = "rq";
+    rq.textContent = pr;
+    var ta = document.createElement("textarea");
+    ta.style.minHeight = "54px";
+    ta.style.caretColor = c;
+    ta.placeholder = L.writePH;
+    ta.value = notes[rk] || "";
+    ta.setAttribute("data-k", rk);
+    ta.oninput = function() { saveNote(this.getAttribute("data-k")); };
+    ri.appendChild(rq);
+    ri.appendChild(ta);
+    rfx.appendChild(ri);
+  });
+  main.appendChild(rfx);
+}
+
+function drawBM(L, main) {
+  var bttl = document.createElement("p");
+  bttl.className = "bttl";
+  bttl.textContent = L.bmTitle;
+  main.appendChild(bttl);
+
+  var found = false;
+  ["es","en"].forEach(function(lg) {
+    var LD = DATA[lg];
+    [0,1,2].forEach(function(di) {
+      var p = LD.program[di];
+      [[p.morning,0],[p.afternoon,1]].forEach(function(row) {
+        row[0].forEach(function(item, ii) {
+          var k = lg + "_" + di + "_" + row[1] + "_" + ii;
+          if (bmarks[k]) {
+            found = true;
+            var dc = COLORS[di];
+            var bc = document.createElement("div");
+            bc.className = "bc";
+            var bcr = document.createElement("div");
+            bcr.className = "bcr";
+            var left = document.createElement("div");
+            var bm = document.createElement("p");
+            bm.className = "bm";
+            bm.textContent = LD.days[di] + " - " + (row[1] === 0 ? LD.morning : LD.afternoon);
+            var bti = document.createElement("p");
+            bti.className = "bti";
+            bti.textContent = item.ti;
+            left.appendChild(bm);
+            left.appendChild(bti);
+            if (item.de) {
+              var bde = document.createElement("p");
+              bde.className = "bde";
+              bde.textContent = item.de;
+              left.appendChild(bde);
+            }
+            var bb = document.createElement("button");
+            bb.className = "bb";
+            bb.setAttribute("data-k", k);
+            bb.onclick = function(e) { toggleBmark(this.getAttribute("data-k")); };
+            bb.innerHTML = svgOn(dc);
+            bcr.appendChild(left);
+            bcr.appendChild(bb);
+            bc.appendChild(bcr);
+            var nt = notes[k] || "";
+            if (nt) {
+              var bno = document.createElement("div");
+              bno.className = "bno";
+              bno.textContent = nt;
+              bc.appendChild(bno);
+            }
+            main.appendChild(bc);
+          }
+        });
+      });
+    });
+  });
+
+  if (!found) {
+    var em = document.createElement("div");
+    em.className = "em";
+    em.textContent = L.bmEmpty;
+    main.appendChild(em);
+  }
+
+  var gt = document.createElement("p");
+  gt.className = "gt";
+  gt.textContent = L.genTitle;
+  main.appendChild(gt);
+
+  var ta = document.createElement("textarea");
+  ta.style.minHeight = "140px";
+  ta.style.caretColor = "#b8860b";
+  ta.placeholder = L.genPH;
+  ta.value = notes["gen"] || "";
+  ta.setAttribute("data-k","gen");
+  ta.oninput = function() { saveNote(this.getAttribute("data-k")); };
+  main.appendChild(ta);
+}
+
+loadLS();
+draw();
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('sw.js').catch(function(e) {
+      console.log('SW registration failed:', e);
+    });
+  });
+}
+</script>
+</body>
+</html>
