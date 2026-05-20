@@ -105,7 +105,7 @@ body.light .bno { color: #666; background: #fdf6e3; }
 .gt { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; margin: 22px 0 8px; }
 body.dark .gt { color: #555; }
 body.light .gt { color: #aaa; }
-.pdfbtn { display: block; width: 100%; padding: 14px; margin-bottom: 16px; border-radius: 6px; font-family: Georgia, serif; font-size: 14px; cursor: pointer; border: 1px solid #b8860b; color: #b8860b; background: transparent; }
+.pdfbtn { display: block; width: 100%; padding: 14px; margin-bottom: 16px; border-radius: 6px; font-family: Georgia, serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; cursor: pointer; border: 1px solid #b8860b; color: #b8860b; background: transparent; transition: background 0.15s; }
 .pdfbtn:hover { background: rgba(184, 134, 11, 0.08); }
 .pdfbtn:active { transform: scale(0.98); }
 #printArea { display: none; }
@@ -177,7 +177,7 @@ notePH:"¿Qué aprendiste? ¿Qué texto te llamó la atención? ¿Cómo puedes a
 refl:"Reflexión", writePH:"Escribe aquí...", bmTitle:"Temas marcados",
 bmEmpty:"Marca temas del programa con la estrella para guardarlos aquí",
 genTitle:"Notas generales de la asamblea", genPH:"Reflexiones, pensamientos y aprendizajes...",
-pdfBtn:"📄 Exportar PDF", pdfTitle:"Asamblea Regional 2026", pdfSubtitle:"Felices para siempre",
+pdfBtn:"Exportar PDF", pdfTitle:"Asamblea Regional 2026", pdfSubtitle:"Felices para siempre",
 pdfDayLabel:"Día", pdfThemeLabel:"Texto base", pdfNotesLabel:"Mis notas:", pdfReflLabel:"Reflexión personal",
 pdfStarred:"Marcado", pdfPrintedOn:"Impreso el",
 days:["Viernes","Sábado","Domingo"],
@@ -185,72 +185,85 @@ prompts:["¿Cuál discurso te impactó más hoy y por qué?","¿Qué texto bíbl
 program:[
 { theme:"Felices los que reconocen sus necesidades espirituales", verse:"Mateo 5:3",
 morning:[
-{t:"9:40",ti:"DISCURSO DEL PRESIDENTE",de:"Felicidad para siempre en abundancia: ¿es realista? (Salmo 16:11; 100:2)",b:true},
-{t:"10:10",ti:"PRODUCCIÓN AUDIOVISUAL: Las buenas noticias según Jesús: Episodio 4",de:"Para eso he venido (Mateo 4:23-25; 8:1-4,14-17; 9:1-17; 12:1-21; Marcos 1:21–3:19; Lucas 4:31-44; 5:12–6:16; Juan 5:1-47)",b:true},
+{t:"9:20",ti:"Video musical",de:"",b:false,s:true},
+{t:"9:30",ti:"Canción 160 y oración",de:"",b:false,s:true},
+{t:"9:40",ti:"DISCURSO DEL PRESIDENTE DE LA ASAMBLEA",de:"¿Es realista la idea de ser felices para siempre? (Salmo 16:11; 100:2)",b:true},
+{t:"10:10",ti:"PRODUCCIÓN AUDIOVISUAL: Las buenas noticias según Jesús: Episodio 4",de:"Para eso he venido (Mateo 4:23-25; 8:1-4, 14-17; 9:1-17; 12:1-21; Marcos 1:21–3:19; Lucas 4:31-44; 5:12–6:16; Juan 5:1-47)",b:true},
 {t:"11:05",ti:"Canción 17 y anuncios",de:"",b:false,s:true},
-{t:"11:15",ti:"SERIE DE DISCURSOS: Las profecías sobre el Mesías se cumplieron",de:"",b:true,s:true},
-{t:"",ti:"Él mismo tomó nuestras enfermedades",de:"Mateo 8:16,17; Salmo 32:1,2; Isaías 53:4,5",b:false},
+{t:"11:15",ti:"SERIE DE DISCURSOS: ¡Las profecías sobre el Mesías se cumplieron!",de:"",b:true,s:true},
+{t:"",ti:"Él mismo tomó nuestras enfermedades",de:"Mateo 8:16, 17; Salmo 32:1, 2; Isaías 53:4, 5",b:false},
 {t:"",ti:"No discutirá",de:"Mateo 12:15-21; Isaías 42:1-4",b:false},
-{t:"",ti:"Nunca les hablaba sin utilizar alguna comparación",de:"Mateo 13:34,35; Salmo 78:2",b:false}
+{t:"",ti:"Nunca les hablaba sin utilizar alguna comparación",de:"Mateo 13:34, 35; Salmo 78:2",b:false},
+{t:"12:10",ti:"Canción 14 e intermedio",de:"",b:false,s:true}
 ],
 afternoon:[
+{t:"1:35",ti:"Video musical",de:"",b:false,s:true},
+{t:"1:45",ti:"Canción 23",de:"",b:false,s:true},
 {t:"1:50",ti:"¿Qué enseñó Jesús sobre el sábado?",de:"Mateo 12:1-14; Juan 5:1-17",b:true},
 {t:"2:10",ti:"SERIE DE DISCURSOS: Imitemos a los que sirvieron a Jesús",de:"",b:true,s:true},
-{t:"",ti:"Los apóstoles",de:"Lucas 6:13,15,16",b:false},
+{t:"",ti:"Los apóstoles",de:"Lucas 6:13, 15, 16",b:false},
 {t:"",ti:"Muchas mujeres",de:"Mateo 27:55; Marcos 15:40; Lucas 8:1-3",b:false},
 {t:"2:50",ti:"Canción 76 y anuncios",de:"",b:false,s:true},
-{t:"3:00",ti:"Felices los que lavan sus túnicas largas",de:"Apocalipsis 7:9,10,13-15; 22:14; Juan 5:24-29",b:true},
+{t:"3:00",ti:"Felices los que lavan sus túnicas largas",de:"Apocalipsis 7:9, 10, 13-15; 22:14; Juan 5:24-29",b:true},
 {t:"3:30",ti:"Canción 155 y oración de conclusión",de:"",b:false,s:true}
 ]
 },
 { theme:"Hay más felicidad en dar que en recibir", verse:"Hechos 20:35",
 morning:[
+{t:"9:20",ti:"Video musical",de:"",b:false,s:true},
 {t:"9:30",ti:"Canción 111 y oración",de:"",b:false,s:true},
-{t:"9:40",ti:"Él comenzó a hablarles y a enseñarles",de:"Mateo 5:1,2",b:true},
-{t:"9:50",ti:"PRODUCCIÓN AUDIOVISUAL: Las buenas noticias según Jesús: Episodio 5",de:"Quedaron asombrados de su manera de enseñar (Mateo 5:3–7:29; Lucas 6:17-49)",b:true},
+{t:"9:40",ti:"Él tomó la palabra y se puso a enseñarles",de:"Mateo 5:1, 2",b:true},
+{t:"9:50",ti:"PRODUCCIÓN AUDIOVISUAL: Las buenas noticias según Jesús: Episodio 5",de:"Impactados con su manera de enseñar (Mateo 5:3–7:29; Lucas 6:17-49)",b:true},
 {t:"10:25",ti:"Canción 89 y anuncios",de:"",b:false,s:true},
-{t:"10:35",ti:"¿Qué nos puede impedir ser felices?",de:"Lucas 6:24-26",b:true},
-{t:"10:50",ti:"¿Puede discernir el principio que hay detrás de la ley?",de:"Mateo 5:17-48",b:true},
-{t:"11:15",ti:"SERIE DE DISCURSOS: Lecciones de la tierra de Jesús",de:"",b:true,s:true},
+{t:"10:35",ti:"Cuatro enemigos de la felicidad",de:"Lucas 6:24-26",b:true},
+{t:"10:50",ti:"¿Puede ver el principio detrás de la ley?",de:"Mateo 5:17-48",b:true},
+{t:"11:15",ti:"SERIE DE DISCURSOS: Lecciones sobre la tierra en la que vivió Jesús",de:"",b:true,s:true},
 {t:"",ti:"La sal y la luz",de:"Mateo 5:13-16",b:false},
-{t:"",ti:"Las plantas y los animales",de:"Génesis 1:28,29; Mateo 6:19,26,28; 7:6,10,15,16",b:false},
-{t:"11:40",ti:"BAUTISMO: Tu Padre, que ve en secreto, te recompensará",de:"Mateo 6:6",b:true}
+{t:"",ti:"Las plantas y los animales",de:"Génesis 1:28, 29; Mateo 6:19, 26, 28; 7:6, 10, 15, 16",b:false},
+{t:"11:40",ti:"DISCURSO DE BAUTISMO: Tu Padre, que mira en secreto, te lo pagará",de:"Mateo 6:6",b:true},
+{t:"12:10",ti:"Canción 51 e intermedio",de:"",b:false,s:true}
 ],
 afternoon:[
-{t:"1:50",ti:"SERIE DE DISCURSOS: Felices los...",de:"",b:true,s:true},
-{t:"",ti:"Los que reconocen sus necesidades espirituales (Mateo 5:3)",de:"",b:false},
-{t:"",ti:"Los que lloran (Mateo 5:4)",de:"",b:false},
-{t:"",ti:"Los de temperamento apacible (Mateo 5:5)",de:"",b:false},
-{t:"",ti:"Los que tienen hambre y sed de justicia (Mateo 5:6)",de:"",b:false},
-{t:"",ti:"Los misericordiosos (Mateo 5:7)",de:"",b:false},
-{t:"",ti:"Los de corazón puro (Mateo 5:8)",de:"",b:false},
-{t:"",ti:"Los que trabajan por la paz (Mateo 5:9)",de:"",b:false},
-{t:"",ti:"Los que han sido perseguidos por causa de la justicia (Mateo 5:10)",de:"",b:false},
-{t:"",ti:"Ustedes cuando la gente los insulta (Mateo 5:11,12)",de:"",b:false},
+{t:"1:35",ti:"Video musical",de:"",b:false,s:true},
+{t:"1:45",ti:"Canción 125",de:"",b:false,s:true},
+{t:"1:50",ti:"SERIE DE DISCURSOS: Felices...",de:"",b:true,s:true},
+{t:"",ti:"... los que reconocen sus necesidades espirituales",de:"Mateo 5:3",b:false},
+{t:"",ti:"... los que se lamentan",de:"Mateo 5:4",b:false},
+{t:"",ti:"... los que son apacibles",de:"Mateo 5:5",b:false},
+{t:"",ti:"... los que tienen hambre y sed de justicia",de:"Mateo 5:6",b:false},
+{t:"",ti:"... los que son misericordiosos",de:"Mateo 5:7",b:false},
+{t:"",ti:"... los que tienen un corazón puro",de:"Mateo 5:8",b:false},
+{t:"",ti:"... los que fomentan la paz",de:"Mateo 5:9",b:false},
+{t:"",ti:"... los que han sido perseguidos por causa de la justicia",de:"Mateo 5:10",b:false},
+{t:"",ti:"... ustedes cuando la gente los insulte",de:"Mateo 5:11, 12",b:false},
 {t:"3:20",ti:"Canción 81 y anuncios",de:"",b:false,s:true},
-{t:"3:30",ti:"¿Por qué están ustedes preocupados?",de:"Mateo 6:19-33",b:true},
-{t:"3:55",ti:"Entren por la puerta estrecha",de:"Mateo 7:1-5,12-14,16-18,24-27",b:true},
+{t:"3:30",ti:"¿Por qué se angustian?",de:"Mateo 6:19-33",b:true},
+{t:"3:55",ti:"Entren por la puerta angosta",de:"Mateo 7:1-5, 12-14, 16-18, 24-27",b:true},
 {t:"4:30",ti:"Canción 21 y oración de conclusión",de:"",b:false,s:true}
 ]
 },
 { theme:"Felices los ojos de ustedes, que ven, y sus oídos, que oyen", verse:"Mateo 13:16",
 morning:[
+{t:"9:20",ti:"Video musical",de:"",b:false,s:true},
 {t:"9:30",ti:"Canción 68 y oración",de:"",b:false,s:true},
 {t:"9:40",ti:"SERIE DE DISCURSOS: Lecciones de las comparaciones de Jesús",de:"",b:true,s:true},
 {t:"",ti:"Los cuatro tipos de terreno",de:"Mateo 13:18-23",b:false},
 {t:"",ti:"El trigo y la mala hierba",de:"Mateo 13:24-30",b:false},
-{t:"",ti:"El grano de mostaza",de:"Mateo 13:31,32",b:false},
+{t:"",ti:"El grano de mostaza",de:"Mateo 13:31, 32",b:false},
 {t:"",ti:"La levadura",de:"Mateo 13:33",b:false},
 {t:"",ti:"La red de pesca",de:"Mateo 13:47-50",b:false},
 {t:"11:00",ti:"Canción 64 y anuncios",de:"",b:false,s:true},
 {t:"11:10",ti:"DISCURSO PÚBLICO: ¿Ha encontrado el tesoro?",de:"Mateo 13:44-46",b:true},
-{t:"11:40",ti:"Resumen de La Atalaya",de:"",b:true}
+{t:"11:40",ti:"Resumen de La Atalaya",de:"",b:true},
+{t:"12:10",ti:"Canción 140 e intermedio",de:"",b:false,s:true}
 ],
 afternoon:[
-{t:"1:50",ti:"PRODUCCIÓN AUDIOVISUAL: Las buenas noticias según Jesús: Episodio 6",de:"¿Eres tú el que tiene que venir? (Mateo 8:5-13; 11:2–13:53; Marcos 3:19–4:34; Lucas 7:1–8:21)",b:true},
+{t:"1:35",ti:"Video musical",de:"",b:false,s:true},
+{t:"1:45",ti:"Canción 108",de:"",b:false,s:true},
+{t:"1:50",ti:"PRODUCCIÓN AUDIOVISUAL: Las buenas noticias según Jesús: Episodio 6",de:"¿Eres tú el que tiene que venir? (Mateo 8:5-13; 11:2-30; 12:22–13:53; Marcos 3:19–4:34; Lucas 7:1–8:21)",b:true},
 {t:"2:35",ti:"Canción 120 y anuncios",de:"",b:false,s:true},
 {t:"2:45",ti:"¿Qué hemos aprendido?",de:"",b:true},
-{t:"2:55",ti:"Felices los ojos de ustedes, que ven",de:"Mateo 7:1-5; 13:16,17; Lucas 6:46-49; 10:21; Juan 17:6; Santiago 1:22-25",b:true},
+{t:"2:55",ti:"Felices los ojos de ustedes, que ven",de:"Mateo 7:1-5; 13:16, 17; Lucas 6:46-49; 10:21; Juan 17:6; Santiago 1:22-25",b:true},
 {t:"3:45",ti:"Canción 163 y oración de conclusión",de:"",b:false,s:true}
 ]
 }
@@ -264,7 +277,7 @@ notePH:"What did you learn? What scripture stood out? How can you apply this?",
 refl:"Reflection", writePH:"Write here...", bmTitle:"Bookmarked talks",
 bmEmpty:"Bookmark talks with the star icon to save them here",
 genTitle:"General convention notes", genPH:"Reflections, thoughts, and lessons...",
-pdfBtn:"📄 Export PDF", pdfTitle:"2026 Regional Convention", pdfSubtitle:"Eternal Happiness",
+pdfBtn:"Export PDF", pdfTitle:"2026 Regional Convention", pdfSubtitle:"Eternal Happiness",
 pdfDayLabel:"Day", pdfThemeLabel:"Theme", pdfNotesLabel:"My notes:", pdfReflLabel:"Personal reflection",
 pdfStarred:"Bookmarked", pdfPrintedOn:"Printed on",
 days:["Friday","Saturday","Sunday"],
@@ -272,72 +285,85 @@ prompts:["Which talk impacted you most today and why?","Which scripture do you w
 program:[
 { theme:"Happy are those conscious of their spiritual need", verse:"Matthew 5:3",
 morning:[
+{t:"9:20",ti:"Music video",de:"",b:false,s:true},
+{t:"9:30",ti:"Song No. 160 and Prayer",de:"",b:false,s:true},
 {t:"9:40",ti:"CHAIRMAN'S ADDRESS",de:"Abundant Happiness Forever—Is It Realistic? (Psalm 16:11; 100:2)",b:true},
-{t:"10:10",ti:"FEATURE BIBLE DRAMA: The Good News According to Jesus: Episode 4",de:"This Is Why I Have Come (Matthew 4:23-25; 8:1-4,14-17; 9:1-17; 12:1-21; Mark 1:21-3:19; Luke 4:31-44; 5:12-6:16; John 5:1-47)",b:true},
+{t:"10:10",ti:"FEATURE BIBLE DRAMA: The Good News According to Jesus: Episode 4",de:"This Is Why I Have Come (Matthew 4:23-25; 8:1-4, 14-17; 9:1-17; 12:1-21; Mark 1:21-3:19; Luke 4:31-44; 5:12-6:16; John 5:1-47)",b:true},
 {t:"11:05",ti:"Song No. 17 and Announcements",de:"",b:false,s:true},
 {t:"11:15",ti:"SYMPOSIUM: Messianic Prophecy Fulfilled",de:"",b:true,s:true},
-{t:"",ti:"He Himself Took Our Sicknesses",de:"Matthew 8:16,17; Psalm 32:1,2; Isaiah 53:4,5",b:false},
+{t:"",ti:"He Himself Took Our Sicknesses",de:"Matthew 8:16, 17; Psalm 32:1, 2; Isaiah 53:4, 5",b:false},
 {t:"",ti:"He Will Not Quarrel",de:"Matthew 12:15-21; Isaiah 42:1-4",b:false},
-{t:"",ti:"Without an Illustration He Would Not Speak",de:"Matthew 13:34,35; Psalm 78:2",b:false}
+{t:"",ti:"Without an Illustration He Would Not Speak",de:"Matthew 13:34, 35; Psalm 78:2",b:false},
+{t:"12:10",ti:"Song No. 14 and Intermission",de:"",b:false,s:true}
 ],
 afternoon:[
+{t:"1:35",ti:"Music video",de:"",b:false,s:true},
+{t:"1:45",ti:"Song No. 23",de:"",b:false,s:true},
 {t:"1:50",ti:"What Did Jesus Teach Regarding the Sabbath?",de:"Matthew 12:1-14; John 5:1-17",b:true},
 {t:"2:10",ti:"SYMPOSIUM: Imitate Those Who Ministered to Jesus",de:"",b:true,s:true},
-{t:"",ti:"The Apostles",de:"Luke 6:13,15,16",b:false},
+{t:"",ti:"The Apostles",de:"Luke 6:13, 15, 16",b:false},
 {t:"",ti:"Many Women",de:"Matthew 27:55; Mark 15:40; Luke 8:1-3",b:false},
 {t:"2:50",ti:"Song No. 76 and Announcements",de:"",b:false,s:true},
-{t:"3:00",ti:"Happy Are Those Who Wash Their Robes",de:"Revelation 7:9,10,13-15; 22:14; John 5:24-29",b:true},
+{t:"3:00",ti:"Happy Are Those Who Wash Their Robes",de:"Revelation 7:9, 10, 13-15; 22:14; John 5:24-29",b:true},
 {t:"3:30",ti:"Song No. 155 and Closing Prayer",de:"",b:false,s:true}
 ]
 },
 { theme:"There is more happiness in giving than there is in receiving", verse:"Acts 20:35",
 morning:[
+{t:"9:20",ti:"Music video",de:"",b:false,s:true},
 {t:"9:30",ti:"Song No. 111 and Prayer",de:"",b:false,s:true},
-{t:"9:40",ti:"He Opened His Mouth and Began Teaching Them",de:"Matthew 5:1,2",b:true},
+{t:"9:40",ti:"He Opened His Mouth and Began Teaching Them",de:"Matthew 5:1, 2",b:true},
 {t:"9:50",ti:"FEATURE BIBLE DRAMA: The Good News According to Jesus: Episode 5",de:"Astounded at His Way of Teaching (Matthew 5:3-7:29; Luke 6:17-49)",b:true},
 {t:"10:25",ti:"Song No. 89 and Announcements",de:"",b:false,s:true},
 {t:"10:35",ti:"What Can Prevent Us From Being Happy?",de:"Luke 6:24-26",b:true},
 {t:"10:50",ti:"Can You Discern the Principle Behind the Law?",de:"Matthew 5:17-48",b:true},
 {t:"11:15",ti:"SYMPOSIUM: Lessons From the Land of Jesus",de:"",b:true,s:true},
 {t:"",ti:"Salt and Light",de:"Matthew 5:13-16",b:false},
-{t:"",ti:"Plants and Animals",de:"Genesis 1:28,29; Matthew 6:19,26,28; 7:6,10,15,16",b:false},
-{t:"11:40",ti:"BAPTISM: Your Father Who Looks On in Secret Will Repay You",de:"Matthew 6:6",b:true}
+{t:"",ti:"Plants and Animals",de:"Genesis 1:28, 29; Matthew 6:19, 26, 28; 7:6, 10, 15, 16",b:false},
+{t:"11:40",ti:"BAPTISM: Your Father Who Looks On in Secret Will Repay You",de:"Matthew 6:6",b:true},
+{t:"12:10",ti:"Song No. 51 and Intermission",de:"",b:false,s:true}
 ],
 afternoon:[
+{t:"1:35",ti:"Music video",de:"",b:false,s:true},
+{t:"1:45",ti:"Song No. 125",de:"",b:false,s:true},
 {t:"1:50",ti:"SYMPOSIUM: Happy Are...",de:"",b:true,s:true},
-{t:"",ti:"Those Conscious of Their Spiritual Need (Matthew 5:3)",de:"",b:false},
-{t:"",ti:"Those Who Mourn (Matthew 5:4)",de:"",b:false},
-{t:"",ti:"The Mild-Tempered (Matthew 5:5)",de:"",b:false},
-{t:"",ti:"Those Hungering and Thirsting for Righteousness (Matthew 5:6)",de:"",b:false},
-{t:"",ti:"The Merciful (Matthew 5:7)",de:"",b:false},
-{t:"",ti:"The Pure in Heart (Matthew 5:8)",de:"",b:false},
-{t:"",ti:"The Peacemakers (Matthew 5:9)",de:"",b:false},
-{t:"",ti:"Those Persecuted for Righteousness Sake (Matthew 5:10)",de:"",b:false},
-{t:"",ti:"You When People Reproach You (Matthew 5:11,12)",de:"",b:false},
+{t:"",ti:"Those Conscious of Their Spiritual Need",de:"Matthew 5:3",b:false},
+{t:"",ti:"Those Who Mourn",de:"Matthew 5:4",b:false},
+{t:"",ti:"The Mild-Tempered",de:"Matthew 5:5",b:false},
+{t:"",ti:"Those Hungering and Thirsting for Righteousness",de:"Matthew 5:6",b:false},
+{t:"",ti:"The Merciful",de:"Matthew 5:7",b:false},
+{t:"",ti:"The Pure in Heart",de:"Matthew 5:8",b:false},
+{t:"",ti:"The Peacemakers",de:"Matthew 5:9",b:false},
+{t:"",ti:"Those Who Have Been Persecuted for Righteousness' Sake",de:"Matthew 5:10",b:false},
+{t:"",ti:"You When People Reproach You",de:"Matthew 5:11, 12",b:false},
 {t:"3:20",ti:"Song No. 81 and Announcements",de:"",b:false,s:true},
 {t:"3:30",ti:"Why Are You Anxious?",de:"Matthew 6:19-33",b:true},
-{t:"3:55",ti:"Go In Through the Narrow Gate",de:"Matthew 7:1-5,12-14,16-18,24-27",b:true},
+{t:"3:55",ti:"Go In Through the Narrow Gate",de:"Matthew 7:1-5, 12-14, 16-18, 24-27",b:true},
 {t:"4:30",ti:"Song No. 21 and Closing Prayer",de:"",b:false,s:true}
 ]
 },
 { theme:"Happy are your eyes because they see and your ears because they hear", verse:"Matthew 13:16",
 morning:[
+{t:"9:20",ti:"Music video",de:"",b:false,s:true},
 {t:"9:30",ti:"Song No. 68 and Prayer",de:"",b:false,s:true},
-{t:"9:40",ti:"SYMPOSIUM: Applying Lessons From Jesus Illustrations",de:"",b:true,s:true},
+{t:"9:40",ti:"SYMPOSIUM: Applying Lessons From Jesus' Illustrations",de:"",b:true,s:true},
 {t:"",ti:"Four Types of Soil",de:"Matthew 13:18-23",b:false},
 {t:"",ti:"Wheat and Weeds",de:"Matthew 13:24-30",b:false},
-{t:"",ti:"Mustard Grain",de:"Matthew 13:31,32",b:false},
+{t:"",ti:"Mustard Grain",de:"Matthew 13:31, 32",b:false},
 {t:"",ti:"Leaven",de:"Matthew 13:33",b:false},
 {t:"",ti:"Dragnet",de:"Matthew 13:47-50",b:false},
 {t:"11:00",ti:"Song No. 64 and Announcements",de:"",b:false,s:true},
 {t:"11:10",ti:"PUBLIC BIBLE DISCOURSE: Have You Discovered the Treasure?",de:"Matthew 13:44-46",b:true},
-{t:"11:40",ti:"Summary of The Watchtower",de:"",b:true}
+{t:"11:40",ti:"Summary of The Watchtower",de:"",b:true},
+{t:"12:10",ti:"Song No. 140 and Intermission",de:"",b:false,s:true}
 ],
 afternoon:[
-{t:"1:50",ti:"FEATURE BIBLE DRAMA: The Good News According to Jesus: Episode 6",de:"Are You the Coming One? (Matthew 8:5-13; 11:2-13:53; Mark 3:19-4:34; Luke 7:1-8:21)",b:true},
+{t:"1:35",ti:"Music video",de:"",b:false,s:true},
+{t:"1:45",ti:"Song No. 108",de:"",b:false,s:true},
+{t:"1:50",ti:"FEATURE BIBLE DRAMA: The Good News According to Jesus: Episode 6",de:"Are You the Coming One? (Matthew 8:5-13; 11:2-30; 12:22-13:53; Mark 3:19-4:34; Luke 7:1-8:21)",b:true},
 {t:"2:35",ti:"Song No. 120 and Announcements",de:"",b:false,s:true},
 {t:"2:45",ti:"What Did You Learn?",de:"",b:true},
-{t:"2:55",ti:"Happy Are Your Eyes Because They See",de:"Matthew 7:1-5; 13:16,17; Luke 6:46-49; 10:21; John 17:6; James 1:22-25",b:true},
+{t:"2:55",ti:"Happy Are Your Eyes Because They See",de:"Matthew 7:1-5; 13:16, 17; Luke 6:46-49; 10:21; John 17:6; James 1:22-25",b:true},
 {t:"3:45",ti:"Song No. 163 and Closing Prayer",de:"",b:false,s:true}
 ]
 }
